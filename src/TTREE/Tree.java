@@ -37,19 +37,15 @@ class Tree {
 
     void insert(int t) {
         Node newNode = new Node(t);
-        if (newNode == null) {
-            System.out.println("Overflow");
-        } else {
-            search(t);
-            if (loc != null)
-                System.out.println("Item already present");
-            else if (par == null)
-                root = newNode;
-            else if (t < par.data)
-                par.left = newNode;
-            else
-                par.right = newNode;
-        }
+        search(t);
+        if (loc != null)
+            System.out.println("Item already present");
+        else if (par == null)
+            root = newNode;
+        else if (t < par.data)
+            par.left = newNode;
+        else
+            par.right = newNode;
     }
 
     void inorder(Node temp) {
